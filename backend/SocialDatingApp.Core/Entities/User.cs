@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using SocialDatingApp.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,5 +12,6 @@ namespace SocialDatingApp.Core
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }
+        public virtual ICollection<UserRole> UserRoles { get; set; }
     }
 }

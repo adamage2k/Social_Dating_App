@@ -10,6 +10,6 @@ namespace SocialDatingApp.Core.Entities
     public class Role: IdentityRole
     {
         public string Description { get; set; }
-
+        public virtual ICollection<UserRole> UserRoles { get; set; }
     }
 }

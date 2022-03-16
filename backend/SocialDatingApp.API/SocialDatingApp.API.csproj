@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SocialDatingApp.Application\SocialDatingApp.Application.csproj" />
+    <ProjectReference Include="..\SocialDatingApp.Infrastructure\SocialDatingApp.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
