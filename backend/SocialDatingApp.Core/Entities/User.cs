@@ -1,20 +1,17 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using SocialDatingApp.Core.Entities;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SocialDatingApp.Core.Entities
+namespace SocialDatingApp.Core
 {
-    [Table("Uzytkownik")]
-    public class User
+    public class User : IdentityUser
     {
-        [Key]
-        public int Id { get; set; }
-        public string Imie { get; set; }
-        public string Nazwisko { get; set; }
-        public int Wiek { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Age { get; set; }
+        public virtual ICollection<UserRole> UserRoles { get; set; }
     }
 }

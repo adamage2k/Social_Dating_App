@@ -4,4 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SocialDatingApp.Application\SocialDatingApp.Application.csproj" />
+    <ProjectReference Include="..\SocialDatingApp.Core\SocialDatingApp.Core.csproj" />
+  </ItemGroup>
+
 </Project>
