@@ -40,8 +40,11 @@ namespace SocialDatingApp.API
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SocialApp")));
 
-            services.AddIdentity<User, Role>(options => options.Stores.MaxLengthForKeys = 128)
-               .AddEntityFrameworkStores<ApplicationDbContext>();
+            /*services.AddIdentity<User, Role>(options => options.Stores.MaxLengthForKeys = 128)
+               .AddEntityFrameworkStores<ApplicationDbContext>();*/
+
+            services.AddControllers();
+            services.AddCors();
 
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IUserService, UserService>();
@@ -60,6 +63,8 @@ namespace SocialDatingApp.API
 
             app.UseRouting();
 
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
