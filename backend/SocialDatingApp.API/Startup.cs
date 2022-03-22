@@ -40,8 +40,8 @@ namespace SocialDatingApp.API
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SocialApp")));
 
-            /*services.AddIdentity<User, Role>(options => options.Stores.MaxLengthForKeys = 128)
-               .AddEntityFrameworkStores<ApplicationDbContext>();*/
+            services.AddIdentity<User, Role>(options => options.Stores.MaxLengthForKeys = 128)
+               .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddCors();
           
