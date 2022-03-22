@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using SocialDatingApp.Application.Services;
+using SocialDatingApp.Application.Users;
 using SocialDatingApp.Core;
 using SocialDatingApp.Core.Entities;
 using SocialDatingApp.Infrastructure.Data;
@@ -39,12 +40,13 @@ namespace SocialDatingApp.API
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SocialApp")));
 
-            services.AddIdentity<User, Role>(options => options.Stores.MaxLengthForKeys = 128)
-               .AddEntityFrameworkStores<ApplicationDbContext>();
+            /*services.AddIdentity<User, Role>(options => options.Stores.MaxLengthForKeys = 128)
+               .AddEntityFrameworkStores<ApplicationDbContext>();*/
 
             services.AddCors();
-
+          
             services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
