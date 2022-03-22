@@ -5,9 +5,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using SocialDatingApp.Application.Services;
 using SocialDatingApp.Core;
 using SocialDatingApp.Core.Entities;
 using SocialDatingApp.Infrastructure.Data;
+using SocialDatingApp.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +30,12 @@ namespace SocialDatingApp.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SocialDatingApp.API", Version = "v1" });
+            });
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SocialApp")));
 
@@ -37,6 +45,8 @@ namespace SocialDatingApp.API
             services.AddControllers();
             services.AddCors();
 
+            services.AddScoped<IAccountService, AccountService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,17 +54,11 @@ namespace SocialDatingApp.API
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PhotoMap.API v1"));
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
 
             app.UseRouting();
 
@@ -64,7 +68,7 @@ namespace SocialDatingApp.API
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }
