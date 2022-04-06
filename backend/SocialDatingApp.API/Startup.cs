@@ -33,6 +33,8 @@ namespace SocialDatingApp.API
         {
             services.AddControllers();
 
+            services.AddAutoMapper(typeof(Startup));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SocialDatingApp.API", Version = "v1" });
@@ -55,7 +57,7 @@ namespace SocialDatingApp.API
             if (env.IsDevelopment())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PhotoMap.API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SocialDatingApp.API v1"));
             }
 
             app.UseHttpsRedirection();
