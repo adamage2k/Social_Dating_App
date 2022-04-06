@@ -25,9 +25,6 @@ import { SharedModule } from './modules/shared.module';
     ListsComponent,
     MessagesComponent,
   ],
-})
-@NgModule({
-  declarations: [AppComponent, NavComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
