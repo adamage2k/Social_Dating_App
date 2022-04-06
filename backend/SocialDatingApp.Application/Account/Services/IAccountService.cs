@@ -10,7 +10,7 @@ namespace SocialDatingApp.Application.Services
 {
     public interface IAccountService
     {
-        Task<User> RegisterAsync(RegisterDTO registerDTO);
-        Task<User> LoginAsync(LoginDTO loginDTO);
+        Task<UserDTO> RegisterAsync(RegisterDTO registerDTO);
+        Task<UserDTO> LoginAsync(LoginDTO loginDTO);
     }
 }
