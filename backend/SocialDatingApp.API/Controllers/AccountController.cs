@@ -22,16 +22,17 @@ namespace SocialDatingApp.API.Controllers
         }
 
         [HttpPost("Register")]
-        public async Task<User> Register(RegisterDTO registerDTO)
+        public async Task<UserDTO> Register(RegisterDTO registerDTO)
         {
             return await _accountService.RegisterAsync(registerDTO);
         }
 
         [HttpPost("Login")]
-        public async Task<User> Login(LoginDTO loginDTO)
+        public async Task<UserDTO> Login(LoginDTO loginDTO)
         {
             return await _accountService.LoginAsync(loginDTO);
         }
 
+        
     }
 }
