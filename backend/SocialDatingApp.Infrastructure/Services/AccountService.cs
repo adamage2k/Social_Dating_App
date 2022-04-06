@@ -22,11 +22,11 @@ namespace SocialDatingApp.Infrastructure.Services
             _signInManager = signInManager;
         }
 
-        public async Task<User> LoginAsync(LoginDTO loginDTO)
+        public async Task<UserDTO> LoginAsync(LoginDTO loginDTO)
         {
             var user = await _userManager.FindByNameAsync(loginDTO.Login);
 
-            if(user is null)
+            if (user is null)
                 throw new ArgumentException();
 
             var result = await _signInManager.PasswordSignInAsync(loginDTO.Login, loginDTO.Password, false, false);
@@ -34,10 +34,15 @@ namespace SocialDatingApp.Infrastructure.Services
             if (!result.Succeeded)
                 throw new ArgumentException();
 
-            return user;
+            var userDTO = new UserDTO();
+            user.FirstName = userDTO.FirstName;
+            user.LastName = userDTO.LastName;
+            user.Age = userDTO.Age;
+            user.Email = userDTO.Email;
+            return userDTO;
         }
 
-        public async Task<User> RegisterAsync(RegisterDTO registerDTO)
+        public async Task<UserDTO> RegisterAsync(RegisterDTO registerDTO)
         {
             var user = new User();
             user.Email = registerDTO.Email;
@@ -46,12 +51,23 @@ namespace SocialDatingApp.Infrastructure.Services
             user.LastName = registerDTO.LastName;
             user.Age = registerDTO.Age;
 
-            var result = await  _userManager.CreateAsync(user, registerDTO.Password);
+            var result = await _userManager.CreateAsync(user, registerDTO.Password);
 
             if (!result.Succeeded)
                 throw new ArgumentException();
-
-            return user;
+            var userDTO = new UserDTO();
+            user.FirstName = userDTO.FirstName;
+            user.LastName = userDTO.LastName;
+            user.Age = userDTO.Age;
+            user.Email = userDTO.Email;
+            return userDTO;
         }
+
+
+
+
+
+
+       
     }
 }
