@@ -50,6 +50,15 @@ namespace SocialDatingApp.Infrastructure.Services
             user.FirstName = registerDTO.FirstName;
             user.LastName = registerDTO.LastName;
             user.Age = registerDTO.Age;
+            try
+            {
+                var result = await _userManager.CreateAsync(user, registerDTO.Password);
+                if (!result.Succeeded)
+                    throw new ArgumentException();
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
 
             var result = await _userManager.CreateAsync(user, registerDTO.Password);
 
@@ -61,13 +70,6 @@ namespace SocialDatingApp.Infrastructure.Services
             user.Age = userDTO.Age;
             user.Email = userDTO.Email;
             return userDTO;
-        }
-
-
-
-
-
-
-       
+        }  
     }
 }
