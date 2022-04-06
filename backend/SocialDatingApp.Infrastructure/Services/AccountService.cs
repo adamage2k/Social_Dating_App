@@ -35,10 +35,10 @@ namespace SocialDatingApp.Infrastructure.Services
                 throw new ArgumentException();
 
             var userDTO = new UserDTO();
-            user.FirstName = userDTO.FirstName;
-            user.LastName = userDTO.LastName;
-            user.Age = userDTO.Age;
-            user.Email = userDTO.Email;
+            userDTO.FirstName = user.FirstName;
+            userDTO.LastName = user.LastName;
+            userDTO.Age = user.Age;
+            userDTO.Email = user.Email;
             return userDTO;
         }
 
@@ -52,10 +52,10 @@ namespace SocialDatingApp.Infrastructure.Services
                 throw new ArgumentException();
             
             var userDTO = new UserDTO();
-            user.FirstName = userDTO.FirstName;
-            user.LastName = userDTO.LastName;
-            user.Age = userDTO.Age;
-            user.Email = userDTO.Email;
+            userDTO.FirstName = user.FirstName;
+            userDTO.LastName = user.LastName;
+            userDTO.Age = user.Age;
+            userDTO.Email = user.Email;
             return userDTO;
             
         }

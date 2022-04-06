@@ -8,7 +8,7 @@ import { ReplaySubject } from 'rxjs';
   providedIn: 'root',
 })
 export class AccountService {
-  baseUrl = 'https://localhost:44395/api/';
+  baseUrl = 'https://localhost:5001/api/';
   private currentUserSource = new ReplaySubject<User>(1);
   currentUser$ = this.currentUserSource.asObservable();
 
@@ -17,6 +17,7 @@ export class AccountService {
   logIn(model: any) {
     return this.http.post(this.baseUrl + 'Account/Login', model).pipe(
       map((response: User) => {
+        console.log(response);
         const user = response;
         if (user) {
           localStorage.setItem('user', JSON.stringify(user));
