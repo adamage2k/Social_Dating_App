@@ -5,6 +5,7 @@ using SocialDatingApp.Core.Entities;
 using SocialDatingApp.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,8 +28,6 @@ namespace SocialDatingApp.Infrastructure.Repositories
 
             matches.AddRange(matches2);
 
-
-
             var result = new List<UserDTO>();
             foreach(var match in matches)
             {
@@ -36,7 +35,11 @@ namespace SocialDatingApp.Infrastructure.Repositories
                 user.UserName = match.UserName;
                 user.FirstName = match.FirstName;
                 user.LastName = match.LastName;
+                user.KnownAs = string.Format("{0} {1}", match.FirstName, match.LastName);
                 user.Email = match.Email;
+
+                byte[] bytes = File.ReadAllBytes("Photos/temp.png");
+                user.Photo = Convert.ToBase64String(bytes);
 
                 result.Add(user);
             }

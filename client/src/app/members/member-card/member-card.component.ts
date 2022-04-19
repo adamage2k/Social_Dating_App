@@ -14,6 +14,7 @@ export class MemberCardComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    console.log(this.member)
   }
 
   onButtonClick(username: string) {

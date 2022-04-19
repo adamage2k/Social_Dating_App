@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MembersService } from 'src/app/members.service';
 import { Member } from 'src/app/models/member';
@@ -13,6 +14,7 @@ export class MemberListComponent implements OnInit {
   constructor(private memberService: MembersService) { }
 
   ngOnInit(): void {
+    this.loadMembers();
   }
 
   loadMembers() {

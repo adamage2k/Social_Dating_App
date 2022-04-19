@@ -45,8 +45,7 @@ namespace SocialDatingApp.Infrastructure.Middlewares
 
                 var jwtClaims = new ClaimsIdentity(new[]
                 {
-                    new Claim(ClaimTypes.NameIdentifier, jwtToken.Claims.First(x => x.Type == "sub").Value),
-                    new Claim(ClaimTypes.Name, jwtToken.Claims.First(x => x.Type == "nameid").Value)
+                    new Claim(ClaimTypes.NameIdentifier, jwtToken.Claims.First(x => x.Type == "sub").Value)
                 });
 
                 var claims = new ClaimsPrincipal(jwtClaims);

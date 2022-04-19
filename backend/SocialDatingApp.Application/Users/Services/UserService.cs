@@ -5,7 +5,9 @@ using SocialDatingApp.Application.Repositories;
 using SocialDatingApp.Application.Users.DTOs;
 using SocialDatingApp.Application.Users.Interfaces;
 using SocialDatingApp.Core;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace SocialDatingApp.Application.Users
