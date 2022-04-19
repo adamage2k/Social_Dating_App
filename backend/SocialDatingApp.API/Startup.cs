@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SocialDatingApp.Application.Account.Interfaces;
+using SocialDatingApp.Application.Helpers;
 using SocialDatingApp.Application.Repositories;
 using SocialDatingApp.Application.Services;
 using SocialDatingApp.Application.Users;
@@ -16,6 +17,7 @@ using SocialDatingApp.Application.Users.Interfaces;
 using SocialDatingApp.Core;
 using SocialDatingApp.Core.Entities;
 using SocialDatingApp.Infrastructure.Data;
+using SocialDatingApp.Infrastructure.Helpers;
 using SocialDatingApp.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -45,6 +47,7 @@ namespace SocialDatingApp.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SocialDatingApp.API", Version = "v1" });
             });
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -56,6 +59,7 @@ namespace SocialDatingApp.API
                         ValidateAudience = false
                     };
                 });
+
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SocialApp")));
 
             services.AddIdentity<User, Role>(options => options.Stores.MaxLengthForKeys = 128)
@@ -64,6 +68,7 @@ namespace SocialDatingApp.API
             services.AddCors();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IJwtTokenService, JwtTokenService>();
 
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IUserService, UserService>();
