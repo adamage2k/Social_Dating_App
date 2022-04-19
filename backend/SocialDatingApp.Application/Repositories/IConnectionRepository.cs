@@ -9,6 +9,6 @@ namespace SocialDatingApp.Application.Repositories
 {
     public interface IConnectionRepository
     {
-        Task<UserDTO> GetAllMatches(string userId);
+        Task<IEnumerable<UserDTO>> GetAllMatches(string userId);
     }
 }
