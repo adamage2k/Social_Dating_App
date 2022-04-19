@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using SocialDatingApp.Application.Repositories;
 using SocialDatingApp.Application.Users.DTOs;
 using SocialDatingApp.Application.Users.Interfaces;
 using SocialDatingApp.Core;
@@ -11,9 +13,21 @@ namespace SocialDatingApp.Application.Users
     public class UserService : IUserService
     {
         private readonly UserManager<User> _userManager;
-        public UserService(UserManager<User> userManager)
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IHttpContextAccessor _httpContext;
+        public UserService(UserManager<User> userManager, IUnitOfWork unitOfWork,IHttpContextAccessor httpContext)
         {
             _userManager = userManager;
+            _unitOfWork = unitOfWork;
+            _httpContext = httpContext;
+        }
+
+        public async Task<IEnumerable<UserDTO>> GetAllMatchesAsync()
+        {
+            var user = await _userManager.GetUserAsync(_httpContext.HttpContext.User);
+            
+            return await _unitOfWork.ConnectionRepository.GetAllMatchesAsync(user.Id);
+
         }
 
         public async Task<IEnumerable<UserDTO>> GetUsersAsync()

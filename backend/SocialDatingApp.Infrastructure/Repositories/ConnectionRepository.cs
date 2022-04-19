@@ -19,7 +19,7 @@ namespace SocialDatingApp.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<UserDTO>> GetAllMatches(string userId)
+        public async Task<IEnumerable<UserDTO>> GetAllMatchesAsync(string userId)
         {
             var connections = await _context.Set<Connection>().ToListAsync();
             var matches = connections.Where(x => x.UserId1 == userId).Select(x => x.User2).ToList();
