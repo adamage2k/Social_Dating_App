@@ -1,4 +1,5 @@
-﻿using SocialDatingApp.Core;
+﻿using SocialDatingApp.Application.Account.DTOs;
+using SocialDatingApp.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace SocialDatingApp.Application.Users
 {
     public interface IUserService
     {
-        Task<IEnumerable<User>> GetUsersAsync();
+        Task<IEnumerable<UserDTO>> GetUsersAsync();
     }
 }
