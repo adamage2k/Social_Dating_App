@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SocialDatingApp.Application.Users;
+using SocialDatingApp.Application.Users.DTOs;
+using SocialDatingApp.Application.Users.Interfaces;
 using SocialDatingApp.Core;
 using System;
 using System.Collections.Generic;
@@ -21,7 +23,7 @@ namespace SocialDatingApp.API.Controllers
         }
         
         [HttpGet("Get")]
-        public async Task<IEnumerable<User>> GetAll()
+        public async Task<IEnumerable<UserDTO>> GetAll()
         {
             return await _userService.GetUsersAsync();
         }

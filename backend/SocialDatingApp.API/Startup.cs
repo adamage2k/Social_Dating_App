@@ -6,12 +6,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using SocialDatingApp.Application.Account.Interfaces;
+using SocialDatingApp.Application.Repositories;
 using SocialDatingApp.Application.Services;
 using SocialDatingApp.Application.Users;
+using SocialDatingApp.Application.Users.Interfaces;
 using SocialDatingApp.Core;
 using SocialDatingApp.Core.Entities;
 using SocialDatingApp.Infrastructure.Data;
-using SocialDatingApp.Infrastructure.Services;
+using SocialDatingApp.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +49,9 @@ namespace SocialDatingApp.API
                .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddCors();
-          
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IUserService, UserService>();
         }

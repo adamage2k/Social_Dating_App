@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SocialDatingApp.Application.Account.DTOs
+namespace SocialDatingApp.Application.Users.DTOs
 {
     public class UserDTO
     {
+        public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }

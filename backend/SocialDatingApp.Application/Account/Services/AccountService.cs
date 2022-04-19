@@ -1,15 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using SocialDatingApp.Application.Account.DTOs;
-using SocialDatingApp.Application.Services;
+using SocialDatingApp.Application.Account.Interfaces;
 using SocialDatingApp.Core;
-using SocialDatingApp.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SocialDatingApp.Infrastructure.Services
+namespace SocialDatingApp.Application.Services
 {
     public class AccountService : IAccountService
     {
@@ -22,7 +21,7 @@ namespace SocialDatingApp.Infrastructure.Services
             _signInManager = signInManager;
         }
 
-        public async Task<UserDTO> LoginAsync(LoginDTO loginDTO)
+        public async Task<IdentityDTO> LoginAsync(LoginDTO loginDTO)
         {
             var user = await _userManager.FindByNameAsync(loginDTO.UserName);
 
@@ -34,7 +33,8 @@ namespace SocialDatingApp.Infrastructure.Services
             if (!result.Succeeded)
                 throw new ArgumentException();
 
-            var userDTO = new UserDTO();
+            var userDTO = new IdentityDTO();
+            userDTO.UserName = user.UserName;
             userDTO.FirstName = user.FirstName;
             userDTO.LastName = user.LastName;
             userDTO.Age = user.Age;
@@ -42,7 +42,7 @@ namespace SocialDatingApp.Infrastructure.Services
             return userDTO;
         }
 
-        public async Task<UserDTO> RegisterAsync(RegisterDTO registerDTO)
+        public async Task<IdentityDTO> RegisterAsync(RegisterDTO registerDTO)
         {
             var user = new User();
             user.UserName = registerDTO.UserName;
@@ -50,14 +50,16 @@ namespace SocialDatingApp.Infrastructure.Services
             var result = await _userManager.CreateAsync(user, registerDTO.Password);
             if (!result.Succeeded)
                 throw new ArgumentException();
-            
-            var userDTO = new UserDTO();
+
+            var userDTO = new IdentityDTO();
+            userDTO.UserName = user.UserName;
             userDTO.FirstName = user.FirstName;
             userDTO.LastName = user.LastName;
             userDTO.Age = user.Age;
             userDTO.Email = user.Email;
+
             return userDTO;
-            
+
         }
     }
 }
