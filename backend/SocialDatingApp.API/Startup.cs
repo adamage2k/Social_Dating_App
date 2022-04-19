@@ -18,6 +18,7 @@ using SocialDatingApp.Core;
 using SocialDatingApp.Core.Entities;
 using SocialDatingApp.Infrastructure.Data;
 using SocialDatingApp.Infrastructure.Helpers;
+using SocialDatingApp.Infrastructure.Middlewares;
 using SocialDatingApp.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -90,7 +91,10 @@ namespace SocialDatingApp.API
 
             app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
 
+            app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseMiddleware<AuthorizationMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {
