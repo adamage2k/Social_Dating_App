@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using SocialDatingApp.Application.Account.DTOs;
 using SocialDatingApp.Application.Account.Interfaces;
+using SocialDatingApp.Application.Helpers;
 using SocialDatingApp.Core;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,13 @@ namespace SocialDatingApp.Application.Services
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly IJwtTokenService _jwtService;
 
-        public AccountService(UserManager<User> userManager, SignInManager<User> signInManager)
+        public AccountService(UserManager<User> userManager, SignInManager<User> signInManager, IJwtTokenService jwtService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _jwtService = jwtService;
         }
 
         public async Task<IdentityDTO> LoginAsync(LoginDTO loginDTO)
@@ -39,6 +42,7 @@ namespace SocialDatingApp.Application.Services
             userDTO.LastName = user.LastName;
             userDTO.Age = user.Age;
             userDTO.Email = user.Email;
+            userDTO.Token = _jwtService.CreateToken(user);
             return userDTO;
         }
 
@@ -57,6 +61,7 @@ namespace SocialDatingApp.Application.Services
             userDTO.LastName = user.LastName;
             userDTO.Age = user.Age;
             userDTO.Email = user.Email;
+            userDTO.Token = _jwtService.CreateToken(user);
 
             return userDTO;
 
