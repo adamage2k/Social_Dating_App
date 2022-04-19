@@ -1,1 +1,55 @@
-<p>member-detail works!</p>
+<div class="row" *ngIf="member">
+  <div class="col-4">
+    <div class="card">
+      <img
+        src="{{ member.photoUrl || './assets/user.png' }}"
+        alt="{{ member.knownAs }}"
+      />
+      <div class="card-body">
+        <div>
+          <strong>Location: </strong>
+          <p>{{ member.city }},{{ member.country }}</p>
+        </div>
+        <div>
+          <strong>Age: </strong>
+          <p>{{ member.age }}</p>
+        </div>
+        <div>
+          <strong>Member since: </strong>
+          <p>{{ member.created }}</p>
+        </div>
+        <div>
+          <strong>Last active: </strong>
+          <p>{{ member.lastActive }}</p>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="btn-group d-flex">
+          <button class="btn btn-primaty">Like</button>
+          <button class="btn btn-success">Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-8">
+    <tabset class="member-tabset">
+      <tab heading="About {{ member.knownAs }}">
+        <h4>Description</h4>
+        <p>{{ member.introduction }}</p>
+        <h4>Looking for</h4>
+        <p>{{ member.lookingFor }}</p>
+      </tab>
+      <tab heading="Intrests {{ member.knownAs }}">
+        <h4>Intrests</h4>
+        <p>{{ member.intrests }}</p>
+      </tab>
+      <tab heading="Photos {{ member.knownAs }}">
+        <h4>IN PROGRESS!!</h4>
+      </tab>
+      <tab heading="Messages">
+        <h4>MESSAGES WILL GO HERE!!></h4>
+      </tab>
+    </tabset>
+  </div>
+</div>
