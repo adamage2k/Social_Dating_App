@@ -27,5 +27,11 @@ namespace SocialDatingApp.API.Controllers
         {
             return await _userService.GetUsersAsync();
         }
+
+        [HttpGet("GetMaches")]
+        public async Task<IEnumerable<UserDTO>> GetAllMatches()
+        {
+            return await _userService.GetAllMatchesAsync();
+        }
     }
 }
