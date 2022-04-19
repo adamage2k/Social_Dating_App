@@ -17,6 +17,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.setCurrentUser();
+
+    this.accountService.autoLogin();
   }
 
   setCurrentUser(){

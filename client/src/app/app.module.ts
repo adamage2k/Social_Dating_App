@@ -14,6 +14,7 @@ import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { SharedModule } from './modules/shared.module';
 import { MemberCardComponent } from './members/member-card/member-card.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MemberCardComponent } from './members/member-card/member-card.component
     BrowserAnimationsModule,
     FormsModule,
     SharedModule,
+    RouterModule
   ],
   providers: [
     // { providers: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

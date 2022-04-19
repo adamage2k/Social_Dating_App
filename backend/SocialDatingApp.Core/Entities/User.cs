@@ -14,5 +14,9 @@ namespace SocialDatingApp.Core
         public string LastName { get; set; }
         public int Age { get; set; }
         public virtual ICollection<UserRole> UserRoles { get; set; }
+
+        public virtual ICollection<Connection> Sent { get; set; }
+
+        public virtual ICollection<Connection> Received { get; set; }
     }
 }

@@ -12,6 +12,7 @@ export class AccountService {
   baseUrl = environment.apiUrl;
   private currentUserSource = new ReplaySubject<User>(1);
   currentUser$ = this.currentUserSource.asObservable();
+  loggedIn: boolean;
 
   constructor(private http: HttpClient) {}
 
@@ -23,6 +24,7 @@ export class AccountService {
         if (user) {
           localStorage.setItem('user', JSON.stringify(user));
           this.currentUserSource.next(user);
+          this.loggedIn = true;
         }
       })
     );
@@ -34,6 +36,7 @@ export class AccountService {
         if (user) {
           localStorage.setItem('user', JSON.stringify(user));
           this.currentUserSource.next(user);
+          this.loggedIn = true;
         }
       })
     );
@@ -43,8 +46,19 @@ export class AccountService {
     this.currentUserSource.next(user);
   }
 
+  autoLogin() {
+    let item = localStorage.getItem('user');
+
+    if (item) {
+      const user: User = JSON.parse(item);
+      this.currentUserSource.next(user);
+      this.loggedIn = true;
+    }
+  }
+
   logout() {
     localStorage.removeItem('user');
     this.currentUserSource.next(null);
+    this.loggedIn = false;
   }
 }
