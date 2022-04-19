@@ -8,7 +8,7 @@ namespace SocialDatingApp.Application.Repositories
 {
     public interface IUnitOfWork
     {
-
+        IConnectionRepository ConnectionRepository { get; }
         Task<bool> SaveChangesAsync();
     }
 }
