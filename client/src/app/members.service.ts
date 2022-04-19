@@ -4,24 +4,24 @@ import { environment } from '../environments/environment';
 import { Member } from './models/member';
 
 const httpOpitons = {
-  headers: new HttpHeaders({ 
-    Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user'))?.token
-  })
-}
+  headers: new HttpHeaders({
+    Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user'))?.token,
+  }),
+};
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MembersService {
   baseUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getMembers() {
-    return this.http.get<Member[]>(this.baseUrl + 'users', httpOpitons)
+    return this.http.get<Member[]>(this.baseUrl + 'users');
   }
 
   getMember(username: string) {
-    return this.http.get<Member>(this.baseUrl + 'user/' + username, httpOpitons);
+    return this.http.get<Member>(this.baseUrl + 'user/' + username);
   }
 }
