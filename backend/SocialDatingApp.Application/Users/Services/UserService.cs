@@ -1,32 +1,31 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SocialDatingApp.Application.Account.DTOs;
-using SocialDatingApp.Application.Users;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using SocialDatingApp.Application.Users.DTOs;
+using SocialDatingApp.Application.Users.Interfaces;
 using SocialDatingApp.Core;
-using SocialDatingApp.Infrastructure.Data;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace SocialDatingApp.Infrastructure.Services
+namespace SocialDatingApp.Application.Users
 {
     public class UserService : IUserService
     {
-        private readonly ApplicationDbContext _context;
-        public UserService(ApplicationDbContext context)
+        private readonly UserManager<User> _userManager;
+        public UserService(UserManager<User> userManager)
         {
-            _context = context;
+            _userManager = userManager;
         }
+
         public async Task<IEnumerable<UserDTO>> GetUsersAsync()
         {
-            var users =  await _context.Users.ToListAsync();
+            var users = await _userManager.Users.ToListAsync();
 
             var usersList = new List<UserDTO>();
-            
-            foreach(var user in users)
+
+            foreach (var user in users)
             {
                 var userDTO = new UserDTO();
+                userDTO.UserName = user.UserName;
                 userDTO.FirstName = user.FirstName;
                 userDTO.LastName = user.LastName;
                 userDTO.Age = user.Age;
@@ -34,8 +33,7 @@ namespace SocialDatingApp.Infrastructure.Services
 
                 usersList.Add(userDTO);
             }
-            
-            
+
             return usersList;
         }
     }

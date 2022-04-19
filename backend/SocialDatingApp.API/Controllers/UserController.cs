@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SocialDatingApp.Application.Account.DTOs;
 using SocialDatingApp.Application.Users;
+using SocialDatingApp.Application.Users.DTOs;
+using SocialDatingApp.Application.Users.Interfaces;
 using SocialDatingApp.Core;
 using System;
 using System.Collections.Generic;

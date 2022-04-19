@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SocialDatingApp.Application.Account.DTOs;
-using SocialDatingApp.Application.Services;
+using SocialDatingApp.Application.Account.Interfaces;
 using SocialDatingApp.Core;
 using System;
 using System.Collections.Generic;
@@ -22,13 +22,13 @@ namespace SocialDatingApp.API.Controllers
         }
 
         [HttpPost("Register")]
-        public async Task<UserDTO> Register(RegisterDTO registerDTO)
+        public async Task<IdentityDTO> Register(RegisterDTO registerDTO)
         {
             return await _accountService.RegisterAsync(registerDTO);
         }
 
         [HttpPost("Login")]
-        public async Task<UserDTO> Login(LoginDTO loginDTO)
+        public async Task<IdentityDTO> Login(LoginDTO loginDTO)
         {
             return await _accountService.LoginAsync(loginDTO);
         }
