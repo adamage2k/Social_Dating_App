@@ -15,6 +15,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { SharedModule } from './modules/shared.module';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { RouterModule } from '@angular/router';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { RouterModule } from '@angular/router';
   ],
   providers: [
     // { providers: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    // { providers: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })
