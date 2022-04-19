@@ -8,7 +8,7 @@
     <ul class="list-inline member-icons animate text-center">
       <li class="list-inline-item">
         <button
-          routingLink="/members/{{ member.username }}"
+          (click)="onButtonClick(member.username)"
           class="btn btn-primay"
         >
           <i class="fa fa-user"></i>>
