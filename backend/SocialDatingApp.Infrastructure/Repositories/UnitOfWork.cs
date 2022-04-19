@@ -16,8 +16,11 @@ namespace SocialDatingApp.Infrastructure.Repositories
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
+
+            ConnectionRepository = new ConnectionRepository(_context);
         }
 
+        public IConnectionRepository ConnectionRepository { get; }
         public async Task<bool> SaveChangesAsync()
         {
             try

@@ -1,5 +1,7 @@
-﻿using SocialDatingApp.Application.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using SocialDatingApp.Application.Repositories;
 using SocialDatingApp.Application.Users.DTOs;
+using SocialDatingApp.Core.Entities;
 using SocialDatingApp.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
@@ -17,9 +19,31 @@ namespace SocialDatingApp.Infrastructure.Repositories
             _context = context;
         }
 
-        public Task<UserDTO> GetAllMatches(string userId)
+        public async Task<IEnumerable<UserDTO>> GetAllMatchesAsync(string userId)
         {
-            throw new NotImplementedException();
+            var connections = await _context.Set<Connection>().ToListAsync();
+            var matches = connections.Where(x => x.UserId1 == userId).Select(x => x.User2).ToList();
+            var matches2 = connections.Where(x => x.UserId2 == userId ).Select(x => x.User1).ToList();
+
+            matches.AddRange(matches2);
+
+
+
+            var result = new List<UserDTO>();
+            foreach(var match in matches)
+            {
+                var user = new UserDTO();
+                user.UserName = match.UserName;
+                user.FirstName = match.FirstName;
+                user.LastName = match.LastName;
+                user.Email = match.Email;
+
+                result.Add(user);
+            }
+
+            return result;
+            
+            
         }
     }
 }
