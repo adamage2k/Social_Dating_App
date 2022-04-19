@@ -19,4 +19,8 @@
     <ProjectReference Include="..\SocialDatingApp.Infrastructure\SocialDatingApp.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Photos\" />
+  </ItemGroup>
+
 </Project>
