@@ -100,6 +100,8 @@ namespace SocialDatingApp.API
             {
                 endpoints.MapControllers();
             });
+
+            Seeder.SeedData(app);
         }
     }
 }
