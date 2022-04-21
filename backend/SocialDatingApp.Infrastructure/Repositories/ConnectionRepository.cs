@@ -38,7 +38,7 @@ namespace SocialDatingApp.Infrastructure.Repositories
                 user.KnownAs = string.Format("{0} {1}", match.FirstName, match.LastName);
                 user.Email = match.Email;
 
-                byte[] bytes = File.ReadAllBytes("Photos/temp.png");
+                byte[] bytes = File.ReadAllBytes("Photos/" + user.UserName + ".png");
                 user.Photo = Convert.ToBase64String(bytes);
 
                 result.Add(user);
