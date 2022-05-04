@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { Member } from './models/member';
 import { of } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 const httpOpitons = {
   headers: new HttpHeaders({
@@ -29,10 +30,10 @@ export class MembersService {
     );
   }
 
-  getMember(username: string) {
-    const member = this.members.find((x) => x.username == username);
+  getMember(email: string) {
+    const member = this.members.find((x) => x.email == email);
     if (member != undefined) return of(member);
-    return this.http.get<Member>(this.baseUrl + 'user/' + username);
+    return this.http.get<Member>(this.baseUrl + 'user/' + email);
   }
 
   updateMember(member: Member) {

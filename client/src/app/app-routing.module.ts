@@ -22,7 +22,7 @@ const routes: Routes = [
         canActivate: [AuthGuard],
       },
       { path: 'members/:username', component: MemberDetailComponent },
-      { path: 'member/edit', component: MemberEditComponent, canDeactivate[PreventUnsavedChangedGuard]},
+      { path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangedGuard]},
       { path: 'messages', component: MessagesComponent },
       { path: 'lists', component: ListsComponent },
     ],

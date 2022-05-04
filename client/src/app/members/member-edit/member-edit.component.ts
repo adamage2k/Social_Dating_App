@@ -2,6 +2,8 @@ import { ViewChild } from '@angular/core';
 import { HostListener } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { take } from 'rxjs/operators';
 import { MembersService } from 'src/app/members.service';
 import { Member } from 'src/app/models/member';
 import { User } from 'src/app/models/user';
@@ -26,7 +28,8 @@ export class MemberEditComponent implements OnInit {
 
   constructor(
     private accountService: AccountService,
-    private memberService: MembersService
+    private memberService: MembersService,
+    private toastr: ToastrService
   ) {
     this.accountService.currentUser$
       .pipe(take(1))
@@ -37,7 +40,7 @@ export class MemberEditComponent implements OnInit {
 
   loadMember() {
     this.memberService
-      .getMember(this.user.username)
+      .getMember(this.user.email)
       .subscribe((member) => (this.member = member));
   }
 

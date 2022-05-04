@@ -18,7 +18,8 @@ export class MemberCardComponent implements OnInit {
   }
 
   onButtonClick(username: string) {
-    this.router.navigateByUrl(`/members/${username}`);
+    console.log(username)
+    this.router.navigate(['/members', username]);
   }
 
 }
