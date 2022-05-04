@@ -18,6 +18,7 @@ export class MemberDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadMember();
+    console.log("XD");
   }
 
   loadMember() {
