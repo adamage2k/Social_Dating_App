@@ -13,6 +13,7 @@ namespace SocialDatingApp.Core
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }
+        public string Localization { get; set; }
         public virtual ICollection<UserRole> UserRoles { get; set; }
 
         public virtual ICollection<Connection> Sent { get; set; }

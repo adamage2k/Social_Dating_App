@@ -14,6 +14,7 @@ namespace SocialDatingApp.Application.Users.DTOs
         public string KnownAs { get; set; }
         public string Photo { get; set; }
         public int Age { get; set; }
+        public string Localization { get; set; }
         public string Email { get; set; }
 
     }

@@ -1,14 +1,11 @@
 <div class="row" *ngIf="member">
   <div class="col-4">
     <div class="card">
-      <img
-        src="{{ member.photoUrl || './assets/user.png' }}"
-        alt="{{ member.knownAs }}"
-      />
+      <img [src]="'data:image/png;base64,'+member.photo" alt="{{ member.knownAs }}">
       <div class="card-body">
         <div>
           <strong>Location: </strong>
-          <p>{{ member.city }},{{ member.country }}</p>
+          <p>{{ member.localization }}</p>
         </div>
         <div>
           <strong>Age: </strong>
@@ -41,7 +38,7 @@
         <p>{{ member.lookingFor }}</p>
       </tab>
       <tab heading="Intrests {{ member.knownAs }}">
-        <h4>Intrests</h4>
+        <h4>Interests</h4>
         <p>{{ member.intrests }}</p>
       </tab>
       <tab heading="Photos {{ member.knownAs }}">

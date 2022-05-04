@@ -35,6 +35,8 @@ namespace SocialDatingApp.Infrastructure.Data
                                 NormalizedUserName = "GERALT",
                                 Email = "geralt.rivia@wyzima.com",
                                 NormalizedEmail = "GERALT.RIVIA@WYZIMA.COM",
+                                Age = 25,
+                                Localization = "Kaer Morhen",
                                 EmailConfirmed = false,
                                 PasswordHash = "AQAAAAEAACcQAAAAEJqklDpdP+gBn9mjGhF5YbI59sm2b/nTaFqOwJUSCxTddPkHeY3p0CtE7yBZlUbtUg==", // Password = Wyzima1@
                                 SecurityStamp = "QYCRUXSDCYH5GDNEHDK2CX4A22YVMZS2",
@@ -53,6 +55,8 @@ namespace SocialDatingApp.Infrastructure.Data
                                 NormalizedUserName = "YENNEFER",
                                 Email = "yennefer.vengerberg@wyzima.com",
                                 NormalizedEmail = "YENNEFER.VENGERBERG@WYZIMA.COM",
+                                Age = 22,
+                                Localization = "Velen",
                                 EmailConfirmed = false,
                                 PasswordHash = "AQAAAAEAACcQAAAAEFocob1MtZCfgqScOc3p2StReFOYfCe75biZciqZYo76mXZHd5SmcGByzaGvdEthYA==", // Password = Wyzima1@
                                 SecurityStamp = "2YPMWBMDJB2OVGU7HLCZBZUKUYTVMJNF",
@@ -71,6 +75,8 @@ namespace SocialDatingApp.Infrastructure.Data
                                 NormalizedUserName = "VESEMIR",
                                 Email = "vesemir.wiedzmin@wyzima.com",
                                 NormalizedEmail = "VESEMIR.WIEDZMIN@WYZIMA.COM",
+                                Age = 55,
+                                Localization = "Kaer Morhen",
                                 EmailConfirmed = false,
                                 PasswordHash = "AQAAAAEAACcQAAAAEAna/KiSG45Ep6aAtbgDHRuClHQNrChsuH7XsMVxT4024rV7Jn1DJYQvwGF4OPhMhA==", // Password = Wyzima1@
                                 SecurityStamp = "SZRAE53IC2JCJXOAV6ZDMUYZLMYRQGYP",
@@ -89,6 +95,8 @@ namespace SocialDatingApp.Infrastructure.Data
                                 NormalizedUserName = "CIRI",
                                 Email = "ciri.riannon@wyzima.com",
                                 NormalizedEmail = "CIRI.RIANNON@WYZIMA.COM",
+                                Age = 18,
+                                Localization = "Skellige",
                                 EmailConfirmed = false,
                                 PasswordHash = "AQAAAAEAACcQAAAAEAFFwvCsYD7YQxF2jl/4lH57aajPNUKJM9x8DDgrRNfzDVp+cJKocrVP7aYUmo/pHg==", // Password = Wyzima1@
                                 SecurityStamp = "KB5A6ZWWP23BZ44LD5TRA7665TJM2T2M",
@@ -107,6 +115,8 @@ namespace SocialDatingApp.Infrastructure.Data
                                 NormalizedUserName = "JASKIER",
                                 Email = "jaskier.pankratz @wyzima.com",
                                 NormalizedEmail = "JASKIER.PANKRATZ@WYZIMA.COM",
+                                Age = 23,
+                                Localization = "Biały Sad",
                                 EmailConfirmed = false,
                                 PasswordHash = "AQAAAAEAACcQAAAAEOUrdwmSXaJMUkYqqn+xvUiblSexCmFZtI8lFeAaOce6T7tIWzbh+fp3OCWPbu5ytw==", // Password = Wyzima1@
                                 SecurityStamp = "EH7OIW2GA2OQ3JMG5F3JK2LZU6CJII5P",
@@ -125,6 +135,8 @@ namespace SocialDatingApp.Infrastructure.Data
                                 NormalizedUserName = "TRISS",
                                 Email = "triss.merigold@wyzima.com",
                                 NormalizedEmail = "TRISS.MERIGOLD@WYZIMA.COM",
+                                Age = 24,
+                                Localization = "Mirthe",
                                 EmailConfirmed = false,
                                 PasswordHash = "AQAAAAEAACcQAAAAEAVMKBC0kOSWtCQIEZultSQWfHHpyLUcU23bPxS4K2a+6tcoVjclCOM51LQ8pAIHeQ==", // Password = Wyzima1@
                                 SecurityStamp = "5DGS7YSJVXIZCKDJNHOPDHNI6TDRWBYJ",
@@ -143,6 +155,8 @@ namespace SocialDatingApp.Infrastructure.Data
                                 NormalizedUserName = "FRINGILLA",
                                 Email = "fringilla.vigo@wyzima.com",
                                 NormalizedEmail = "FRINGILLA.VIGO@WYZIMA.COM",
+                                Age = 28,
+                                Localization = "Nilfgaard",
                                 EmailConfirmed = false,
                                 PasswordHash = "AQAAAAEAACcQAAAAEMFLouO262jg4AmLR8ELwlN8cia551nade2Q9RWP93z14pH6hYAHbKZM/zdn/q8vMA==", // Password = Wyzima1@
                                 SecurityStamp = "6RJ4XFMGS3FEUQ3YCEZRR4M5WMHCPUVN",
@@ -161,6 +175,8 @@ namespace SocialDatingApp.Infrastructure.Data
                                 NormalizedUserName = "LAMBERT",
                                 Email = "lambert.krasnolud@wyzima.com",
                                 NormalizedEmail = "LAMBERT.KRASNOLUD@WYZIMA.COM",
+                                Age = 25,
+                                Localization = "Lasy Wyzimy",
                                 EmailConfirmed = false,
                                 PasswordHash = "AQAAAAEAACcQAAAAEH/8/aSqmbzgWbgxaZfRI53FOOWaOTWywQsU8d3GbFRLoVsV5EHpXCdvhinyssM9ew==", // Password = Wyzima1@
                                 SecurityStamp = "P2CIDP5J5G7YXGKRQU4XE6GBSLYCOJKB",
