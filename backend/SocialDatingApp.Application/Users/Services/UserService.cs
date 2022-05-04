@@ -46,6 +46,7 @@ namespace SocialDatingApp.Application.Users
                 userDTO.LastName = user.LastName;
                 userDTO.Age = user.Age;
                 userDTO.Email = user.Email;
+                userDTO.Localization = user.Localization;
 
                 usersList.Add(userDTO);
             }
