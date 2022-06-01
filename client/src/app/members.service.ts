@@ -21,8 +21,7 @@ export class MembersService {
   constructor(private http: HttpClient) {}
 
   getMembers() {
-    if (this.members.length > 0) return of(this.members);
-    return this.http.get<Member[]>(this.baseUrl + 'User/GetMatches').pipe(
+    return this.http.get<Member[]>(this.baseUrl + 'User/GetAll').pipe(
       map((members) => {
         this.members = members;
         return members;
@@ -32,20 +31,19 @@ export class MembersService {
 
   addMatch(username: string) {
     return this.http.post(
-      this.baseUrl + 'user/AddMatch',
-      { username },
+      this.baseUrl + 'User/AddMatch/' + username,
       httpOpitons
     );
   }
 
   getMatches() {
-    return this.http.get<Partial<Member[]>>(this.baseUrl + '/user/GetMatches');
+    return this.http.get<Member[]>(this.baseUrl + 'User/GetMatches');
   }
 
   getMember(email: string) {
     const member = this.members.find((x) => x.email == email);
     if (member != undefined) return of(member);
-    return this.http.get<Member>(this.baseUrl + 'user/' + email);
+    return this.http.get<Member>(this.baseUrl + 'User/' + email);
   }
 
   getSelfProfile() {

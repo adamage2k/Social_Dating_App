@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MembersService } from 'src/app/members.service';
@@ -11,7 +11,7 @@ import { Member } from 'src/app/models/member';
 })
 export class MemberCardComponent implements OnInit {
   @Input() member: Member;
-
+  @Output() userLiked = new EventEmitter<string>();
   constructor(
     private memberService: MembersService,
     private toastr: ToastrService
@@ -22,8 +22,12 @@ export class MemberCardComponent implements OnInit {
   }
 
   addMatch(member: Member) {
-    this.memberService.addMatch(member.username).subscribe(
-      () => this.toastr.success('Match added + member.knowsAs'),
+    console.log(member);
+    this.memberService.addMatch(member.userName).subscribe(
+      () => {
+        this.toastr.success(`Match added: ${member.firstName} ${member.lastName}`);
+        this.userLiked.emit(member.userName);
+      },
       (error) => this.toastr.error('Something went wrong')
     );
   }

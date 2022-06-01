@@ -17,11 +17,10 @@ export class MemberListComponent implements OnInit {
 
   ngOnInit(): void {
     this.members$ = this.memberService.getMembers();
+    this.members$.subscribe(data => this.members = data)
   }
 
-  loadMembers() {
-    this.memberService.getMembers().subscribe((members) => {
-      this.members = members;
-    });
+  onUserLiked($event: string): void {
+    this.members = this.members.filter(x => x.userName != $event);
   }
 }

@@ -202,57 +202,49 @@ namespace SocialDatingApp.Infrastructure.Data
                             {
                                 ConnectionId = 1,
                                 UserId1 = "900ecda1-f34c-4fc0-8282-d9871f514e5f",
-                                UserId2 = "1950ebbc-a093-422b-af5f-22521e88f45f",
-                                Confirmed = true
+                                UserId2 = "1950ebbc-a093-422b-af5f-22521e88f45f"
                             },
                             new Connection
                             {
                                 ConnectionId = 2,
                                 UserId1 = "900ecda1-f34c-4fc0-8282-d9871f514e5f",
-                                UserId2 = "805a3c1e-9bf8-4caf-8530-174e71d44637",
-                                Confirmed = true
+                                UserId2 = "805a3c1e-9bf8-4caf-8530-174e71d44637"
                             },
                             new Connection
                             {
                                 ConnectionId = 3,
                                 UserId1 = "900ecda1-f34c-4fc0-8282-d9871f514e5f",
-                                UserId2 = "518ae485-ef25-4aee-bbec-f7f1bfff51b1",
-                                Confirmed = true
+                                UserId2 = "518ae485-ef25-4aee-bbec-f7f1bfff51b1"
                             },
                             new Connection
                             {
                                 ConnectionId = 4,
                                 UserId1 = "1950ebbc-a093-422b-af5f-22521e88f45f",
-                                UserId2 = "3826d32d-8dc1-46ae-b703-cd7653700ca3",
-                                Confirmed = true
+                                UserId2 = "3826d32d-8dc1-46ae-b703-cd7653700ca3"
                             },
                             new Connection
                             {
                                 ConnectionId = 5,
                                 UserId1 = "5a082b37-3f47-423a-ba4b-00add48d25be",
-                                UserId2 = "8222f166-68df-4397-ad33-89d00f86a3f5",
-                                Confirmed = true
+                                UserId2 = "8222f166-68df-4397-ad33-89d00f86a3f5"
                             },
                             new Connection
                             {
                                 ConnectionId = 6,
                                 UserId1 = "f4b049d4-d1ca-4bc4-bcb7-79c4f2b5f8d0",
-                                UserId2 = "5a082b37-3f47-423a-ba4b-00add48d25be",
-                                Confirmed = true
+                                UserId2 = "5a082b37-3f47-423a-ba4b-00add48d25be"
                             },
                             new Connection
                             {
                                 ConnectionId = 7,
                                 UserId1 = "518ae485-ef25-4aee-bbec-f7f1bfff51b1",
-                                UserId2 = "3826d32d-8dc1-46ae-b703-cd7653700ca3",
-                                Confirmed = true
+                                UserId2 = "3826d32d-8dc1-46ae-b703-cd7653700ca3"
                             },
                             new Connection
                             {
                                 ConnectionId = 8,
                                 UserId1 = "805a3c1e-9bf8-4caf-8530-174e71d44637",
-                                UserId2 = "f4b049d4-d1ca-4bc4-bcb7-79c4f2b5f8d0",
-                                Confirmed = true
+                                UserId2 = "f4b049d4-d1ca-4bc4-bcb7-79c4f2b5f8d0"
                             }
                         );
                     }
