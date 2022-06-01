@@ -186,6 +186,86 @@ namespace SocialDatingApp.Infrastructure.Data
                                 LockoutEnabled = false,
                                 AccessFailedCount = 0
                             },
+                            new User
+                            {
+                                Id = "3826d32d-8dc1-46ae-b703-cd7653700ca3",
+                                FirstName = "Jaskier",
+                                LastName = "Pankratz ",
+                                UserName = "Jaskier",
+                                NormalizedUserName = "JASKIER",
+                                Email = "jaskier.pankratz @wyzima.com",
+                                NormalizedEmail = "JASKIER.PANKRATZ@WYZIMA.COM",
+                                Age = 23,
+                                Localization = "Biały Sad",
+                                EmailConfirmed = false,
+                                PasswordHash = "AQAAAAEAACcQAAAAEOUrdwmSXaJMUkYqqn+xvUiblSexCmFZtI8lFeAaOce6T7tIWzbh+fp3OCWPbu5ytw==", // Password = Wyzima1@
+                                SecurityStamp = "EH7OIW2GA2OQ3JMG5F3JK2LZU6CJII5P",
+                                ConcurrencyStamp = "1f23ac2a-9f91-484b-94c7-488975b3da51",
+                                PhoneNumberConfirmed = false,
+                                TwoFactorEnabled = false,
+                                LockoutEnabled = false,
+                                AccessFailedCount = 0
+                            },
+                            new User
+                            {
+                                Id = "3826d32d-8dc1-46ae-b703-cd7653700ca3",
+                                FirstName = "Bruce",
+                                LastName = "Wayne ",
+                                UserName = "Batman",
+                                NormalizedUserName = "BATMAN",
+                                Email = "bruce.wayne @wyzima.com",
+                                NormalizedEmail = "BRUCE.WAYNE@WYZIMA.COM",
+                                Age = 29,
+                                Localization = "Gotham",
+                                EmailConfirmed = false,
+                                PasswordHash = "AQAAAAEAACcQAAAAEOUrdwmSXaJMUkYqqn+xvUiblSexCmFZtI8lFeAaOce6T7tIWzbh+fp3OCWPbu5ytw==", // Password = Wyzima1@
+                                SecurityStamp = "EH7OIW2GA2OQ3JMG5F3JK2LZU6CJII5P",
+                                ConcurrencyStamp = "1f23ac2a-9f91-484b-94c7-488975b3da51",
+                                PhoneNumberConfirmed = false,
+                                TwoFactorEnabled = false,
+                                LockoutEnabled = false,
+                                AccessFailedCount = 0
+                            },
+                            new User
+                            {
+                                Id = "3826d32d-8dc1-46ae-b703-cd7653700ca3",
+                                FirstName = "Jack",
+                                LastName = "Sparrow ",
+                                UserName = "Jack",
+                                NormalizedUserName = "JACK",
+                                Email = "jack.sparrow @wyzima.com",
+                                NormalizedEmail = "JACK.SPARROW@WYZIMA.COM",
+                                Age = 39,
+                                Localization = "Tortuga",
+                                EmailConfirmed = false,
+                                PasswordHash = "AQAAAAEAACcQAAAAEOUrdwmSXaJMUkYqqn+xvUiblSexCmFZtI8lFeAaOce6T7tIWzbh+fp3OCWPbu5ytw==", // Password = Wyzima1@
+                                SecurityStamp = "EH7OIW2GA2OQ3JMG5F3JK2LZU6CJII5P",
+                                ConcurrencyStamp = "1f23ac2a-9f91-484b-94c7-488975b3da51",
+                                PhoneNumberConfirmed = false,
+                                TwoFactorEnabled = false,
+                                LockoutEnabled = false,
+                                AccessFailedCount = 0
+                            },
+                            new User
+                            {
+                                Id = "3826d32d-8dc1-46ae-b703-cd7653700ca3",
+                                FirstName = "Lara",
+                                LastName = "Croft ",
+                                UserName = "Lara",
+                                NormalizedUserName = "LARA",
+                                Email = "lara.croft @wyzima.com",
+                                NormalizedEmail = "LARA.CROFT@WYZIMA.COM",
+                                Age = 23,
+                                Localization = "Grobowiec",
+                                EmailConfirmed = false,
+                                PasswordHash = "AQAAAAEAACcQAAAAEOUrdwmSXaJMUkYqqn+xvUiblSexCmFZtI8lFeAaOce6T7tIWzbh+fp3OCWPbu5ytw==", // Password = Wyzima1@
+                                SecurityStamp = "EH7OIW2GA2OQ3JMG5F3JK2LZU6CJII5P",
+                                ConcurrencyStamp = "1f23ac2a-9f91-484b-94c7-488975b3da51",
+                                PhoneNumberConfirmed = false,
+                                TwoFactorEnabled = false,
+                                LockoutEnabled = false,
+                                AccessFailedCount = 0
+                            },
                         });
 
                         
