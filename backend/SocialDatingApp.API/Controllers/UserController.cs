@@ -39,5 +39,11 @@ namespace SocialDatingApp.API.Controllers
         {
             return await _userService.GetAllMatchesAsync();
         }
+
+        [HttpGet("AddMatch")]
+        public async Task AddMatchAsync(string userName)
+        {
+            await _userService.AddMatchAsync(userName);
+        }
     }
 }

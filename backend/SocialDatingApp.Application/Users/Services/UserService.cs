@@ -5,6 +5,7 @@ using SocialDatingApp.Application.Repositories;
 using SocialDatingApp.Application.Users.DTOs;
 using SocialDatingApp.Application.Users.Interfaces;
 using SocialDatingApp.Core;
+using SocialDatingApp.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -68,6 +69,24 @@ namespace SocialDatingApp.Application.Users
             var user = await _userManager.GetUserAsync(_httpContext.HttpContext.User);
             
             return await _unitOfWork.ConnectionRepository.GetAllMatchesAsync(user.Id);
+        }
+
+        public async Task AddMatchAsync(string userName)
+        {
+            var user = await _userManager.GetUserAsync(_httpContext.HttpContext.User);
+
+            var friend = await _userManager.FindByNameAsync(userName);
+
+            var connection = new Connection()
+            {
+                User1 = user,
+                User2 = friend,
+                Confirmed = false
+            };
+
+            await _unitOfWork.ConnectionRepository.AddMatchAsync(connection);
+
+            await _unitOfWork.SaveChangesAsync();
         }
     }
 }

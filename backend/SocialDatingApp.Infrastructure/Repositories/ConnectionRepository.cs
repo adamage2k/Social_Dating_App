@@ -20,6 +20,11 @@ namespace SocialDatingApp.Infrastructure.Repositories
             _context = context;
         }
 
+        public async Task AddMatchAsync(Connection connection)
+        {
+            await _context.Connections.AddAsync(connection);
+        }
+
         public async Task<IEnumerable<UserDTO>> GetAllMatchesAsync(string userId)
         {
             var connections = await _context.Set<Connection>().ToListAsync();
