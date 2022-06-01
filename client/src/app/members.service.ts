@@ -37,7 +37,7 @@ export class MembersService {
   }
 
   getSelfProfile() {
-    return this.http.get<Member>(this.baseUrl + 'user/get');
+    return this.http.get<Member>(this.baseUrl + 'user/getAll');
   }
 
   updateMember(member: Member) {
