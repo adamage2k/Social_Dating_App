@@ -3,12 +3,7 @@
     <h1>Your profile</h1>
   </div>
   <div class="col-8">
-    <div class="alert alert-info" *ngIf="editFor.dirty">
-      <p>
-        <strong>Information:</strong> You have made chanves. Any unsaved changes
-        will be lost
-      </p>
-    </div>
+
   </div>
   <div class="col-4">
     <div class="card">
@@ -18,20 +13,24 @@
       />
       <div class="card-body">
         <div>
+          <strong>Name: </strong>
+          <p>{{ member.firstName }} {{ member.lastName }}</p>
+        </div>
+        <div>
           <strong>Location: </strong>
-          <p>{{ member.city }},{{ member.country }}</p>
+          <p>{{ member.localization }}</p>
         </div>
         <div>
           <strong>Age: </strong>
           <p>{{ member.age }}</p>
         </div>
         <div>
-          <strong>Member since: </strong>
-          <p>{{ member.created }}</p>
+          <strong>Email: </strong>
+          <p>{{ member.email }}</p>
         </div>
         <div>
-          <strong>Last active: </strong>
-          <p>{{ member.lastActive }}</p>
+          <strong>Age: </strong>
+          <p>{{ member.age }}</p>
         </div>
       </div>
       <div class="footer">
@@ -64,10 +63,10 @@
             name="lookingFor"
             rows="6"
           ></textarea>
-          <h4>Intrests</h4>
+          <h4>Interests</h4>
           <textarea
             class="form-control"
-            [(ngModel)]="member.intrests"
+            [(ngModel)]="member.interests"
             name="intrests"
             rows="6"
           ></textarea>
