@@ -32,6 +32,7 @@ namespace SocialDatingApp.Infrastructure.Repositories
             foreach(var match in matches)
             {
                 var user = new UserDTO();
+                user.Id = match.Id;
                 user.UserName = match.UserName;
                 user.FirstName = match.FirstName;
                 user.LastName = match.LastName;
@@ -47,8 +48,6 @@ namespace SocialDatingApp.Infrastructure.Repositories
             }
 
             return result;
-            
-            
         }
     }
 }

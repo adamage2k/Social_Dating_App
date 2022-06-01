@@ -36,6 +36,10 @@ export class MembersService {
     return this.http.get<Member>(this.baseUrl + 'user/' + email);
   }
 
+  getSelfProfile() {
+    return this.http.get<Member>(this.baseUrl + 'user/get');
+  }
+
   updateMember(member: Member) {
     return this.http.put(this.baseUrl + 'users', member).pipe(
       map(() => {

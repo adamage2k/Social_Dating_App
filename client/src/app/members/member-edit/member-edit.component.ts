@@ -36,11 +36,13 @@ export class MemberEditComponent implements OnInit {
       .subscribe((user) => (this.user = user));
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadMember();
+  }
 
   loadMember() {
     this.memberService
-      .getMember(this.user.email)
+      .getSelfProfile()
       .subscribe((member) => (this.member = member));
   }
 
