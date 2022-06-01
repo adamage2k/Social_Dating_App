@@ -18,6 +18,7 @@ export class ListsComponent implements OnInit {
 
   loadLikes() {
     this.memberService.getMatches().subscribe((response) => {
+      console.log(response)
       this.members = response;
     });
   }

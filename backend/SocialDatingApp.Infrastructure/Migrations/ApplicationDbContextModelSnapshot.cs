@@ -119,9 +119,6 @@ namespace SocialDatingApp.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("Confirmed")
-                        .HasColumnType("bit");
-
                     b.Property<string>("UserId1")
                         .HasColumnType("nvarchar(450)");
 

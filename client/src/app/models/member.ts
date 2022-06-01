@@ -4,7 +4,7 @@ export interface Member {
     id: number;
     age: number;
     localization: string;
-    username: string;
+    userName: string;
     knownAs: string;
     email: string;
     firstName: string;

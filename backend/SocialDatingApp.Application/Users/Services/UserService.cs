@@ -64,6 +64,9 @@ namespace SocialDatingApp.Application.Users
                 userDTO.Email = user.Email;
                 userDTO.Localization = user.Localization;
 
+                byte[] bytes = File.ReadAllBytes("Photos/" + user.UserName + ".png");
+                userDTO.Photo = Convert.ToBase64String(bytes);
+
                 usersList.Add(userDTO);
             }
 
@@ -87,7 +90,6 @@ namespace SocialDatingApp.Application.Users
             {
                 User1 = user,
                 User2 = friend,
-                Confirmed = false
             };
 
             await _unitOfWork.ConnectionRepository.AddMatchAsync(connection);
