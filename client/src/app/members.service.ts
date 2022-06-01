@@ -30,6 +30,18 @@ export class MembersService {
     );
   }
 
+  addMatch(username: string) {
+    return this.http.post(
+      this.baseUrl + 'user/AddMatch',
+      { username },
+      httpOpitons
+    );
+  }
+
+  getMatches() {
+    return this.http.get<Partial<Member[]>>(this.baseUrl + '/user/GetMatches');
+  }
+
   getMember(email: string) {
     const member = this.members.find((x) => x.email == email);
     if (member != undefined) return of(member);
