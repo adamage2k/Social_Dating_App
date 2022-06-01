@@ -9,8 +9,9 @@ namespace SocialDatingApp.Application.Users.Interfaces
 {
     public interface IUserService
     {
+        Task<UserDTO> GetSelfAsync();
         Task<IEnumerable<UserDTO>> GetUsersAsync();
-
+        Task AddMatchAsync(string userName);
         Task<IEnumerable<UserDTO>> GetAllMatchesAsync();
     }
 }

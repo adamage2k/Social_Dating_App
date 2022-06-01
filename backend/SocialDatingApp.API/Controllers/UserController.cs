@@ -21,8 +21,14 @@ namespace SocialDatingApp.API.Controllers
         {
             _userService = userService;
         }
-        
-        [HttpGet("Get")]
+
+        [HttpGet("GetSelf")]
+        public async Task<UserDTO> GetSelf()
+        {
+            return await _userService.GetSelfAsync();
+        }
+
+        [HttpGet("GetAll")]
         public async Task<IEnumerable<UserDTO>> GetAll()
         {
             return await _userService.GetUsersAsync();
@@ -32,6 +38,12 @@ namespace SocialDatingApp.API.Controllers
         public async Task<IEnumerable<UserDTO>> GetAllMatches()
         {
             return await _userService.GetAllMatchesAsync();
+        }
+
+        [HttpGet("AddMatch")]
+        public async Task AddMatchAsync(string userName)
+        {
+            await _userService.AddMatchAsync(userName);
         }
     }
 }

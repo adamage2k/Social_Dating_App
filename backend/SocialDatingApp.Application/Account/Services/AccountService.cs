@@ -37,6 +37,7 @@ namespace SocialDatingApp.Application.Services
                 throw new ArgumentException();
 
             var userDTO = new IdentityDTO();
+            userDTO.Id = user.Id;
             userDTO.UserName = user.UserName;
             userDTO.FirstName = user.FirstName;
             userDTO.LastName = user.LastName;
@@ -56,6 +57,7 @@ namespace SocialDatingApp.Application.Services
                 throw new ArgumentException();
 
             var userDTO = new IdentityDTO();
+            userDTO.Id = user.Id;
             userDTO.UserName = user.UserName;
             userDTO.FirstName = user.FirstName;
             userDTO.LastName = user.LastName;

@@ -13,5 +13,6 @@ namespace SocialDatingApp.Core.Entities
         public virtual User User1 { get; set; }
         public string UserId2 { get; set; }
         public virtual User User2 { get; set; }
+        public bool Confirmed { get; set; }
     }
 }

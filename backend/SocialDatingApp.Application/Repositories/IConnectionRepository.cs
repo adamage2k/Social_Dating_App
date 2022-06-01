@@ -1,4 +1,5 @@
 ﻿using SocialDatingApp.Application.Users.DTOs;
+using SocialDatingApp.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace SocialDatingApp.Application.Repositories
 {
     public interface IConnectionRepository
     {
+        Task AddMatchAsync(Connection connection);
         Task<IEnumerable<UserDTO>> GetAllMatchesAsync(string userId);
     }
 }

@@ -20,6 +20,11 @@ namespace SocialDatingApp.Infrastructure.Repositories
             _context = context;
         }
 
+        public async Task AddMatchAsync(Connection connection)
+        {
+            await _context.Connections.AddAsync(connection);
+        }
+
         public async Task<IEnumerable<UserDTO>> GetAllMatchesAsync(string userId)
         {
             var connections = await _context.Set<Connection>().ToListAsync();
@@ -32,6 +37,7 @@ namespace SocialDatingApp.Infrastructure.Repositories
             foreach(var match in matches)
             {
                 var user = new UserDTO();
+                user.Id = match.Id;
                 user.UserName = match.UserName;
                 user.FirstName = match.FirstName;
                 user.LastName = match.LastName;
@@ -47,8 +53,6 @@ namespace SocialDatingApp.Infrastructure.Repositories
             }
 
             return result;
-            
-            
         }
     }
 }
