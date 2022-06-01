@@ -9,6 +9,7 @@ using SocialDatingApp.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SocialDatingApp.Application.Users
@@ -43,7 +44,12 @@ namespace SocialDatingApp.Application.Users
 
         public async Task<IEnumerable<UserDTO>> GetUsersAsync()
         {
+            var loggedUser = await _userManager.GetUserAsync(_httpContext.HttpContext.User);
+
             var users = await _userManager.Users.ToListAsync();
+
+            users = users.Where(u => !u.Sent.Any(x => x.UserId1 == loggedUser.Id || x.UserId2 == loggedUser.Id)
+            && !u.Received.Any(x => x.UserId1 == loggedUser.Id || x.UserId2 == loggedUser.Id)).ToList();
 
             var usersList = new List<UserDTO>();
 
