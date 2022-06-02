@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using SocialDatingApp.Application.Account.DTOs;
 using SocialDatingApp.Application.Account.Interfaces;
 using SocialDatingApp.Application.Helpers;
+using SocialDatingApp.Application.Users.DTOs;
 using SocialDatingApp.Core;
 using System;
 using System.Collections.Generic;
@@ -16,12 +18,14 @@ namespace SocialDatingApp.Application.Services
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IJwtTokenService _jwtService;
+        private readonly IHttpContextAccessor _httpContext;
 
-        public AccountService(UserManager<User> userManager, SignInManager<User> signInManager, IJwtTokenService jwtService)
+        public AccountService(UserManager<User> userManager, SignInManager<User> signInManager, IJwtTokenService jwtService, IHttpContextAccessor httpContext)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _jwtService = jwtService;
+            _httpContext = httpContext;
         }
 
         public async Task<IdentityDTO> LoginAsync(LoginDTO loginDTO)
@@ -51,6 +55,9 @@ namespace SocialDatingApp.Application.Services
         {
             var user = new User();
             user.UserName = registerDTO.UserName;
+            user.FirstName = registerDTO.FirstName;
+            user.LastName = registerDTO.LastName;
+            user.Age = registerDTO.Age;
 
             var result = await _userManager.CreateAsync(user, registerDTO.Password);
             if (!result.Succeeded)
@@ -67,6 +74,25 @@ namespace SocialDatingApp.Application.Services
 
             return userDTO;
 
+        }
+
+        public async Task<UserDTO> UpdateAsync(UserDTO userDTO)
+        {
+            var user = await _userManager.GetUserAsync(_httpContext.HttpContext.User);
+
+            user.UserName = userDTO.UserName;
+            user.FirstName = userDTO.FirstName;
+            user.LastName = userDTO.LastName;
+            user.Age = userDTO.Age;
+            user.Email = userDTO.Email;
+            user.Description = userDTO.Description;
+            user.LookingFor = userDTO.LookingFor;
+            user.Interests = userDTO.Interests;
+            user.Localization = userDTO.Localization;
+
+            await _userManager.UpdateAsync(user);
+
+            return userDTO;
         }
     }
 }

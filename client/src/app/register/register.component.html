@@ -14,18 +14,19 @@
 
     <app-text-input [formControl]='registerForm.controls["username"]' 
         [label]='"Username"'></app-text-input>
-    <app-text-input [formControl]='registerForm.controls["knownAs"]' 
-        [label]='"know As"'></app-text-input>
-    <app-text-input [formControl]='registerForm.controls["dateOfBirth"]' 
-        [label]='"Date Of Birth"'></app-text-input>
-    <app-text-input [formControl]='registerForm.controls["city"]' 
-        [label]='"City"'></app-text-input>
-    <app-text-input [formControl]='registerForm.controls["country"]' 
-        [label]='"Country"'></app-text-input>
+    <app-text-input [formControl]='registerForm.controls["age"]' 
+        [label]='"Age"'></app-text-input>
+    <app-text-input [formControl]='registerForm.controls["firstname"]' 
+        [label]='"First name"'></app-text-input>
+    <app-text-input [formControl]='registerForm.controls["lastname"]' 
+        [label]='"Last name"'></app-text-input>
     <app-text-input [formControl]='registerForm.controls["password"]' 
         [label]='"Password"' [type]='"password"'></app-text-input>
     <app-text-input [formControl]='registerForm.controls["confirmPassword"]' 
         [label]='"Confirm Password"' [type]='"password"'></app-text-input>
+    <div class="form-group text-center">
+        <input type="file">
+    </div>
     <div class="form-group text-center">
         <button class="btn btn-success mr-2" type="submit">Register</button>
         <button class="btn btn-default mr-2" (click)="cancel()" type="button">Cancel</button>

@@ -27,38 +27,34 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.fb.group({
       gender: ['male'],
       username: ['', Validators.required],
-      knownAs: ['', Validators.required],
-      dateOfBirth: ['', Validators.required],
-      city: ['', Validators.required],
-      country: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(4), 
-        Validators.maxLength(8)]],
-      confirmPassword: ['', [Validators.required, this.matchValues('password')]]
+      age: ['', Validators.required],
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      password: ['', [Validators.required]],
+      confirmPassword: ['', [Validators.required]]
     })
     this.registerForm.controls.password.valueChanges.subscribe(() => {
       this.registerForm.controls.confirmPassword.updateValueAndValidity();
     })
   }
 
-  matchValues(matchTo: string): ValidatorFn {
-    return (control: AbstractControl) => {
-      return control?.value === control?.parent?.controls[matchTo].value 
-      ? null : {isMatching: true}
-    }
-  }
+
 
   register() {
-    console.log(this.registerForm.value);
-    // this.accountService.register(this.model).subscribe(
-    //   (response) => {
-    //     console.log(response);
-    //     this.cancel();
-    //   },
-    //   (error) => {
-    //     console.log(error);
-    //     this.toastr.error(error.error);
-    //   }
-    // );
+   this.model.username = this.registerForm.value.username;
+   this.model.password = this.registerForm.value.password;
+   this.model.firstName = this.registerForm.value.firstname;
+   this.model.lastName = this.registerForm.value.lastname;
+   this.model.age = this.registerForm.value.age;
+    this.accountService.register(this.model).subscribe(
+      (response) => {
+        this.toastr.success("Correct registration!");
+        this.cancel();
+      },
+      (error) => {
+        this.toastr.error("Incorrect data");
+      }
+    );
   }
 
   cancel() {

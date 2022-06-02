@@ -48,11 +48,11 @@
   <div class="col-8">
     <tabset class="member-tabset">
       <tab heading="About {{ member.knownAs }}">
-        <form #editForm="ngForm" (ngSubmit)="(updateMember)" id="editForm">
+        <form #editForm="ngForm" (ngSubmit)="updateMember()" id="editForm">
           <h4>Description</h4>
           <textarea
             class="form-control"
-            [(ngModel)]="member.introduction"
+            [(ngModel)]="member.description"
             name="introduction"
             rows="6"
           ></textarea>
@@ -71,19 +71,30 @@
             rows="6"
           ></textarea>
           <h4 class="mt-2">Location details:</h4>
-          <div class="form-inline">
-            <labe for="city">Country:</labe>
+          <div class="form-inline mt-3">
+            <label for="city">Localization:</label>
             <input
-              [(ngModel)]="member.country"
+              [(ngModel)]="member.localization"
               type="text"
-              name="country"
+              name="age"
               class="form-control mx-2"
             />
-            <labe for="city">City:</labe>
+          </div>
+          <div class="form-inline mt-3">
+            <label for="city">Age:</label>
             <input
-              [(ngModel)]="member.city"
+              [(ngModel)]="member.age"
               type="text"
-              name="city"
+              name="email"
+              class="form-control mx-2"
+            />
+          </div>
+          <div class="form-inline mt-3">
+            <label for="city">Email:</label>
+            <input
+              [(ngModel)]="member.email"
+              type="text"
+              name="country"
               class="form-control mx-2"
             />
           </div>

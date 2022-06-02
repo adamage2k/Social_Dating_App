@@ -1,4 +1,5 @@
 ﻿using SocialDatingApp.Application.Account.DTOs;
+using SocialDatingApp.Application.Users.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace SocialDatingApp.Application.Account.Interfaces
     {
         Task<IdentityDTO> RegisterAsync(RegisterDTO registerDTO);
         Task<IdentityDTO> LoginAsync(LoginDTO loginDTO);
+        Task<UserDTO> UpdateAsync(UserDTO loginDTO);
     }
 }

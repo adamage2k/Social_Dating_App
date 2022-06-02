@@ -76,7 +76,7 @@ namespace SocialDatingApp.Application.Users
             var users = await _userManager.Users.ToListAsync();
 
             users = users.Where(u => !u.Sent.Any(x => x.UserId1 == loggedUser.Id || x.UserId2 == loggedUser.Id)
-            && !u.Received.Any(x => x.UserId1 == loggedUser.Id || x.UserId2 == loggedUser.Id)).ToList();
+            && !u.Received.Any(x => x.UserId1 == loggedUser.Id || x.UserId2 == loggedUser.Id) && u.Id != loggedUser.Id).ToList();
 
             var usersList = new List<UserDTO>();
 

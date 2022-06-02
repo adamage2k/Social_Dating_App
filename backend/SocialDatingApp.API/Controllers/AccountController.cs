@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SocialDatingApp.Application.Account.DTOs;
 using SocialDatingApp.Application.Account.Interfaces;
+using SocialDatingApp.Application.Users.DTOs;
 using SocialDatingApp.Core;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,10 @@ namespace SocialDatingApp.API.Controllers
             return await _accountService.LoginAsync(loginDTO);
         }
 
-        
+        [HttpPut("Update")]
+        public async Task<UserDTO> Login(UserDTO loginDTO)
+        {
+            return await _accountService.UpdateAsync(loginDTO);
+        }
     }
 }
