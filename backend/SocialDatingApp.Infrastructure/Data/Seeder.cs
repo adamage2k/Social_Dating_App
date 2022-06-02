@@ -188,27 +188,7 @@ namespace SocialDatingApp.Infrastructure.Data
                             },
                             new User
                             {
-                                Id = "3826d32d-8dc1-46ae-b703-cd7653700ca3",
-                                FirstName = "Jaskier",
-                                LastName = "Pankratz ",
-                                UserName = "Jaskier",
-                                NormalizedUserName = "JASKIER",
-                                Email = "jaskier.pankratz @wyzima.com",
-                                NormalizedEmail = "JASKIER.PANKRATZ@WYZIMA.COM",
-                                Age = 23,
-                                Localization = "Biały Sad",
-                                EmailConfirmed = false,
-                                PasswordHash = "AQAAAAEAACcQAAAAEOUrdwmSXaJMUkYqqn+xvUiblSexCmFZtI8lFeAaOce6T7tIWzbh+fp3OCWPbu5ytw==", // Password = Wyzima1@
-                                SecurityStamp = "EH7OIW2GA2OQ3JMG5F3JK2LZU6CJII5P",
-                                ConcurrencyStamp = "1f23ac2a-9f91-484b-94c7-488975b3da51",
-                                PhoneNumberConfirmed = false,
-                                TwoFactorEnabled = false,
-                                LockoutEnabled = false,
-                                AccessFailedCount = 0
-                            },
-                            new User
-                            {
-                                Id = "3826d32d-8dc1-46ae-b703-cd7653700ca3",
+                                Id = "779f70ea-99d2-4fe5-bb62-a6d7278823a3",
                                 FirstName = "Bruce",
                                 LastName = "Wayne ",
                                 UserName = "Batman",
@@ -228,7 +208,7 @@ namespace SocialDatingApp.Infrastructure.Data
                             },
                             new User
                             {
-                                Id = "3826d32d-8dc1-46ae-b703-cd7653700ca3",
+                                Id = "47563445-6d39-4e1b-bcb1-3638ebc913e0",
                                 FirstName = "Jack",
                                 LastName = "Sparrow ",
                                 UserName = "Jack",
@@ -248,7 +228,7 @@ namespace SocialDatingApp.Infrastructure.Data
                             },
                             new User
                             {
-                                Id = "3826d32d-8dc1-46ae-b703-cd7653700ca3",
+                                Id = "65e93120-d18f-440a-bd4e-2898f1b973e4",
                                 FirstName = "Lara",
                                 LastName = "Croft ",
                                 UserName = "Lara",

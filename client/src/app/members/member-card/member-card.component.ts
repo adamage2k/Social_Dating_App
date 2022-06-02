@@ -14,11 +14,11 @@ export class MemberCardComponent implements OnInit {
   @Output() userLiked = new EventEmitter<string>();
   constructor(
     private memberService: MembersService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    console.log(this.member);
   }
 
   addMatch(member: Member) {
@@ -30,5 +30,9 @@ export class MemberCardComponent implements OnInit {
       },
       (error) => this.toastr.error('Something went wrong')
     );
+  }
+
+  onButtonClick(username: string) {
+    this.router.navigate(['/members', username]);
   }
 }

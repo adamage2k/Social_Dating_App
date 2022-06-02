@@ -42,6 +42,27 @@ namespace SocialDatingApp.Application.Users
             return userDTO;
         }
 
+
+        public async Task<UserDTO> GetUserAsync(string username)
+        {
+            var user = await _userManager.FindByNameAsync(username);
+
+            
+            var userDTO = new UserDTO();
+            userDTO.Id = user.Id;
+            userDTO.UserName = user.UserName;
+            userDTO.FirstName = user.FirstName;
+            userDTO.LastName = user.LastName;
+            userDTO.Age = user.Age;
+            userDTO.Email = user.Email;
+            userDTO.Localization = user.Localization;
+
+            byte[] bytes = File.ReadAllBytes("Photos/" + user.UserName + ".png");
+            userDTO.Photo = Convert.ToBase64String(bytes);
+
+            return userDTO;
+        }
+
         public async Task<IEnumerable<UserDTO>> GetUsersAsync()
         {
             var loggedUser = await _userManager.GetUserAsync(_httpContext.HttpContext.User);

@@ -40,10 +40,8 @@ export class MembersService {
     return this.http.get<Member[]>(this.baseUrl + 'User/GetMatches');
   }
 
-  getMember(email: string) {
-    const member = this.members.find((x) => x.email == email);
-    if (member != undefined) return of(member);
-    return this.http.get<Member>(this.baseUrl + 'User/' + email);
+  getMember(username: string) {
+    return this.http.get<Member>(this.baseUrl + 'User/GetUser/' + username);
   }
 
   getSelfProfile() {
