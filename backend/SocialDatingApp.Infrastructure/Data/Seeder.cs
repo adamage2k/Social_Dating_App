@@ -44,7 +44,10 @@ namespace SocialDatingApp.Infrastructure.Data
                                 PhoneNumberConfirmed = false,
                                 TwoFactorEnabled = false,
                                 LockoutEnabled = false,
-                                AccessFailedCount = 0
+                                AccessFailedCount = 0,
+                                LookingFor = "Money, girls and monsters",
+                                Description = "Mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where people often prove more wicked than beasts",
+                                Interests = "Playing guitar"
                             },
                             new User
                             {
@@ -64,7 +67,10 @@ namespace SocialDatingApp.Infrastructure.Data
                                 PhoneNumberConfirmed = false,
                                 TwoFactorEnabled = false,
                                 LockoutEnabled = false,
-                                AccessFailedCount = 0
+                                AccessFailedCount = 0,
+                                LookingFor = "Nice man with white hair",
+                                Description = "I'm young, nice looking witch",
+                                Interests = "Magic and music"
                             },
                             new User
                             {
@@ -84,7 +90,10 @@ namespace SocialDatingApp.Infrastructure.Data
                                 PhoneNumberConfirmed = false,
                                 TwoFactorEnabled = false,
                                 LockoutEnabled = false,
-                                AccessFailedCount = 0
+                                AccessFailedCount = 0,
+                                LookingFor = "I don't know, let's see what will happened",
+                                Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod est et elit pharetra commodo. Vestibulum iaculis risus et risus consequat, a gravida lacus pulvinar. Duis sit amet enim ultricies, vulputate est quis, vehicula dolor. Nunc quis felis tincidunt, ultricies dolor a, aliquet lacus. In sollicitudin sollicitudin sem eu accumsan. Aenean aliquet eros ligula, non efficitur mi finibus vel. Integer sagittis nulla vitae nulla ornare consectetur. Aliquam id orci eu arcu scelerisque tempus ut ac diam. Duis tortor metus, consequat non dui ut, facilisis posuere odio. Nunc elementum urna sed elementum pretium. Quisque pretium magna nec est dapibus, ut imperdiet odio semper. Nulla eu aliquet odio. Mauris a sollicitudin enim, in lacinia turpis. Nunc quis eros facilisis, pharetra diam ut, varius nisi. Donec ultrices nec massa a pulvinar. Sed tincidunt lorem non luctus laoreet. In ac erat ac mi finibus sodales nec nec tellus. Nunc commodo in ligula a semper. Nunc pharetra eget velit vitae commodo. Donec eget massa at nulla ultricies consequat. Fusce tempor eu ipsum vel venenatis. Pellentesque finibus turpis ut erat aliquet gravida. Nam id lorem felis. Maecenas nec placerat est. Phasellus nunc lorem, aliquet eget metus vitae, blandit vulputate turpis. Aliquam at odio non lorem pulvinar sagittis sit amet at magna. Sed sit amet neque in sapien maximus tristique eget et dui. Nam sit amet ligula ut odio sodales feugiat et a augue. Mauris congue orci elit. Sed placerat euismod volutpat. Ut sed leo pharetra, vulputate nulla vitae, malesuada turpis. Mauris sagittis volutpat quam eget feugiat. Curabitur vel tellus nulla. Donec et sagittis elit. Nulla posuere aliquam dui ac auctor. Aenean consectetur ultricies neque a rutrum. Mauris ullamcorper dui quis aliquet rhoncus. Fusce ornare tellus eu sem commodo, nec dignissim neque tempus. Morbi ultricies placerat pellentesque. Morbi non velit faucibus, porta orci non, laoreet mi. Mauris placerat luctus faucibus. Pellentesque facilisis diam velit, sed laoreet mi venenatis non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam tempor purus et sapien vestibulum porttitor. Aenean id eros et nulla dignissim condimentum. Vestibulum eget volutpat arcu, a vehicula tortor. Nam molestie imperdiet accumsan. Etiam quis sapien in lacus placerat faucibus quis at nunc.",
+                                Interests = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod est et elit pharetra commodo. Vestibulum iaculis risus et risus consequat, a gravida lacus pulvinar. Duis sit amet enim ultricies, vulputate est quis, vehicula dolor. Nunc quis felis tincidunt, ultricies dolor a, aliquet lacus. In sollicitudin sollicitudin sem eu accumsan. Aenean aliquet eros ligula, non efficitur mi finibus vel. Integer sagittis nulla vitae nulla ornare consectetur. Aliquam id orci eu arcu scelerisque tempus ut ac diam. Duis tortor metus, consequat non dui ut, facilisis posuere odio. Nunc elementum urna sed elementum pretium. Quisque pretium magna nec est dapibus, ut imperdiet odio semper. Nulla eu aliquet odio. Mauris a sollicitudin enim, in lacinia turpis. Nunc quis eros facilisis, pharetra diam ut, varius nisi. Donec ultrices nec massa a pulvinar. Sed tincidunt lorem non luctus laoreet. In ac erat ac mi finibus sodales nec nec tellus. Nunc commodo in ligula a semper. Nunc pharetra eget velit vitae commodo. Donec eget massa at nulla ultricies consequat. Fusce tempor eu ipsum vel venenatis. Pellentesque finibus turpis ut erat aliquet gravida. Nam id lorem felis. Maecenas nec placerat est. Phasellus nunc lorem, aliquet eget metus vitae, blandit vulputate turpis. Aliquam at odio non lorem pulvinar sagittis sit amet at magna. Sed sit amet neque in sapien maximus tristique eget et dui. Nam sit amet ligula ut odio sodales feugiat et a augue. Mauris congue orci elit. Sed placerat euismod volutpat. Ut sed leo pharetra, vulputate nulla vitae, malesuada turpis. Mauris sagittis volutpat quam eget feugiat. Curabitur vel tellus nulla. Donec et sagittis elit. Nulla posuere aliquam dui ac auctor. Aenean consectetur ultricies neque a rutrum. Mauris ullamcorper dui quis aliquet rhoncus. Fusce ornare tellus eu sem commodo, nec dignissim neque tempus. Morbi ultricies placerat pellentesque. Morbi non velit faucibus, porta orci non, laoreet mi. Mauris placerat luctus faucibus. Pellentesque facilisis diam velit, sed laoreet mi venenatis non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam tempor purus et sapien vestibulum porttitor. Aenean id eros et nulla dignissim condimentum. Vestibulum eget volutpat arcu, a vehicula tortor. Nam molestie imperdiet accumsan. Etiam quis sapien in lacus placerat faucibus quis at nunc."
                             },
                             new User
                             {
@@ -104,7 +113,10 @@ namespace SocialDatingApp.Infrastructure.Data
                                 PhoneNumberConfirmed = false,
                                 TwoFactorEnabled = false,
                                 LockoutEnabled = false,
-                                AccessFailedCount = 0
+                                AccessFailedCount = 0,
+                                LookingFor = "Young prince",
+                                Description = "Young witcheress with special powers",
+                                Interests = "Slaying monsters"
                             },
                             new User
                             {
@@ -124,7 +136,10 @@ namespace SocialDatingApp.Infrastructure.Data
                                 PhoneNumberConfirmed = false,
                                 TwoFactorEnabled = false,
                                 LockoutEnabled = false,
-                                AccessFailedCount = 0
+                                AccessFailedCount = 0,
+                                LookingFor = "Money, girls and beautifull journeys",
+                                Description = "Young fella with beautifull voice",
+                                Interests = "Playing guitar, lute and singing songs about witcher."
                             },
                             new User
                             {
@@ -144,7 +159,10 @@ namespace SocialDatingApp.Infrastructure.Data
                                 PhoneNumberConfirmed = false,
                                 TwoFactorEnabled = false,
                                 LockoutEnabled = false,
-                                AccessFailedCount = 0
+                                AccessFailedCount = 0,
+                                LookingFor = "Geralt because I think he is on this app for Yennefer",
+                                Description = "Young, powerfull witch",
+                                Interests = "Stalking Geralt and make hate comments on Yennefer on forums"
                             },
                             new User
                             {
@@ -164,7 +182,10 @@ namespace SocialDatingApp.Infrastructure.Data
                                 PhoneNumberConfirmed = false,
                                 TwoFactorEnabled = false,
                                 LockoutEnabled = false,
-                                AccessFailedCount = 0
+                                AccessFailedCount = 0,
+                                LookingFor = "Cheating",
+                                Description = "Elegant, short haired witch",
+                                Interests = "Cheating for nilfgaard"
                             },
                             new User
                             {
@@ -184,7 +205,10 @@ namespace SocialDatingApp.Infrastructure.Data
                                 PhoneNumberConfirmed = false,
                                 TwoFactorEnabled = false,
                                 LockoutEnabled = false,
-                                AccessFailedCount = 0
+                                AccessFailedCount = 0,
+                                LookingFor = "Short, dwarf woman",
+                                Description = "Big guy with big muscle",
+                                Interests = "Fight, gwint, alcohol"
                             },
                             new User
                             {
@@ -204,7 +228,10 @@ namespace SocialDatingApp.Infrastructure.Data
                                 PhoneNumberConfirmed = false,
                                 TwoFactorEnabled = false,
                                 LockoutEnabled = false,
-                                AccessFailedCount = 0
+                                AccessFailedCount = 0,
+                                LookingFor = "Crime to fight with",
+                                Description = "I can fly XD",
+                                Interests = "Fight with criminalists in my free time"
                             },
                             new User
                             {
@@ -224,7 +251,10 @@ namespace SocialDatingApp.Infrastructure.Data
                                 PhoneNumberConfirmed = false,
                                 TwoFactorEnabled = false,
                                 LockoutEnabled = false,
-                                AccessFailedCount = 0
+                                AccessFailedCount = 0,
+                                LookingFor = "Arrrrrrr",
+                                Description = "Maybe I'm the worst pirate ever, but you hear about me! That's count!",
+                                Interests = "Sailing"
                             },
                             new User
                             {
@@ -244,7 +274,10 @@ namespace SocialDatingApp.Infrastructure.Data
                                 PhoneNumberConfirmed = false,
                                 TwoFactorEnabled = false,
                                 LockoutEnabled = false,
-                                AccessFailedCount = 0
+                                AccessFailedCount = 0,
+                                LookingFor = "Freak guy with own ship",
+                                Description = "Young millionaire who loves adventures",
+                                Interests = "Treasures and adventures"
                             },
                         });
 

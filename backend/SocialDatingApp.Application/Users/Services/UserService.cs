@@ -38,6 +38,9 @@ namespace SocialDatingApp.Application.Users
             userDTO.Age = user.Age;
             userDTO.Email = user.Email;
             userDTO.Localization = user.Localization;
+            userDTO.Interests = user.Interests;
+            userDTO.Description = user.Description;
+            userDTO.LookingFor = user.LookingFor;
 
             return userDTO;
         }
@@ -56,6 +59,9 @@ namespace SocialDatingApp.Application.Users
             userDTO.Age = user.Age;
             userDTO.Email = user.Email;
             userDTO.Localization = user.Localization;
+            userDTO.Interests = user.Interests;
+            userDTO.Description = user.Description;
+            userDTO.LookingFor = user.LookingFor;
 
             byte[] bytes = File.ReadAllBytes("Photos/" + user.UserName + ".png");
             userDTO.Photo = Convert.ToBase64String(bytes);
@@ -84,6 +90,9 @@ namespace SocialDatingApp.Application.Users
                 userDTO.Age = user.Age;
                 userDTO.Email = user.Email;
                 userDTO.Localization = user.Localization;
+                userDTO.Interests = user.Interests;
+                userDTO.Description = user.Description;
+                userDTO.LookingFor = user.LookingFor;
 
                 byte[] bytes = File.ReadAllBytes("Photos/" + user.UserName + ".png");
                 userDTO.Photo = Convert.ToBase64String(bytes);

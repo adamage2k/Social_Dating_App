@@ -10,4 +10,7 @@ export interface Member {
     firstName: string;
     lastName: string;
     photo: string;
+    lookingFor: string;
+    description: string;
+    interests: string;
 }
